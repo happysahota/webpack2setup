@@ -9,7 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dest/assets/')
   },
   devServer: {
-  contentBase: path.join(__dirname, "dest"),
+    contentBase: path.join(__dirname, "dest"),
 //   compress: true,
 //   port: 9000
 },
@@ -24,6 +24,10 @@ module.exports = {
                   use: ['css-loader', 'sass-loader'],
                   
               })
+          },
+          {
+              test: /\.jpg$/,
+              use:'file-loader?name=[name].[ext]&outputPath=/assets/imgs/'
           }
       ]
   },
